@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xavier's Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Simple toast notification for contact form */
+        #formNotification {
+            position: fixed;
+            right: 20px;
+            bottom: 24px;
+            min-width: 240px;
+            max-width: 420px;
+            padding: 12px 16px;
+            border-radius: 8px;
+            box-shadow: 0 6px 24px rgba(0,0,0,0.16);
+            color: #fff;
+            font-weight: 600;
+            display: none;
+            z-index: 9999;
+            opacity: 0;
+            transition: opacity 240ms ease, transform 240ms ease;
+            transform: translateY(8px);
+        }
+        #formNotification.show { display: block; opacity: 1; transform: translateY(0); }
+        #formNotification.success { background: linear-gradient(90deg,#00C8A0,#00AEEF); }
+        #formNotification.error { background: linear-gradient(90deg,#ff5f6d,#ff9966); }
+    </style>
+</head>
+<body class="dark-mode">
+    <!-- Matrix Canvas Background -->
+    <canvas id="matrixCanvas"></canvas>
+    
+    <!-- Animated Background Gradients -->
+    <div class="animated-bg">
+        <div class="gradient-orb orb-1"></div>
+        <div class="gradient-orb orb-2"></div>
+        <div class="gradient-orb orb-3"></div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-overlay"></div>
+        <nav class="navbar">
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#professional">Professional</a>
+                <a href="#personal">Personal</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="theme-toggle">
+                <button id="themeToggle" class="toggle-btn">
+                    <span class="sun-icon">☀️</span>
+                    <span class="moon-icon">🌙</span>
+                </button>
+            </div>
+        </nav>
+        <div class="hero-content">
+            <h1 class="hero-title">Xavier Fernandes</h1>
+            <p class="hero-subtitle">My Portfolio</p>
+            <div class="scroll-indicator">
+                <span>Scroll Down</span>
+                <div class="scroll-arrow">↓</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about-section">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-left">
+                    <div class="profile-image-container">
+                        <div class="profile-image">
+                            <img src="i/p11.jpg" alt="Profile Picture">
+                        </div>
+                    </div>
+                    <div class="about-text">
+                        <div class="intro-paragraph">
+                            <h3>Introduction</h3>
+                            <p>I'm Xavier Fernandes.
+I've always been drawn to the hidden patterns that power our world — the logic behind every system, the flow of data beneath every interface. What started as curiosity slowly became a pull toward understanding how machines think, communicate, and evolve.
+This portfolio marks the beginning of that exploration. I'm learning to build, break, and rebuild ideas — turning abstract concepts into real experiences. The journey is just starting, and I'm following the trails of data to see where they lead next.</p>
+                        </div>
+                        <div class="current-paragraph">
+                            <h3>Current Status</h3>
+                            <p>I am persuing Computer Engineering from Fr. Conceciao Rodregues College of Engineering Bandra.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-right">
+                    <div class="slideshow-container">
+                        <div class="slideshow-slide active">
+                            <img src="i/slide.jpg" alt="Slide 1">
+                        </div>
+                        <div class="slideshow-slide">
+                            <img src="i/slide2.jpg" alt="Slide 2">
+                        </div>
+                        <div class="slideshow-slide">
+                            <img src="i/slide3.jpg" alt="Slide 3">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Professional Section -->
+    <section id="professional" class="section professional-section">
+        <div class="container">
+            <h2 class="section-title">Professional</h2>
+            
+            <!-- Language Proficiency - Revamped -->
+            <div class="subsection">
+                <h3 class="subsection-title">Languages i work with:</h3>
+                <div class="skills-container">
+                    <!-- Frontend -->
+                    <div class="skill-category">
+                        <h4 class="category-label">Frontend</h4>
+                        <div class="skill-items">
+                            <div class="skill-tag">
+                                <span class="skill-dot"></span>
+                                <span>HTML</span>
+                            </div>
+                            <div class="skill-tag">
+                                <span class="skill-dot"></span>
+                                <span>CSS</span>
+                            </div>
+                            <div class="skill-tag">
+                                <span class="skill-dot"></span>
+                                <span>JavaScript</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Backend -->
+                    <div class="skill-category">
+                        <h4 class="category-label">Backend</h4>
+                        <div class="skill-items">
+                            <div class="skill-tag">
+                                <span class="skill-dot"></span>
+                                <span>C++</span>
+                            </div>
+                            <div class="skill-tag">
+                                <span class="skill-dot"></span>
+                                <span>Java</span>
+                            </div>
+                            <div class="skill-tag">
+                                <span class="skill-dot"></span>
+                                <span>Python</span>
+                            </div>
+                            <div class="skill-tag">
+                                <span class="skill-dot"></span>
+                                <span>SQL</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Simulation -->
+                    <div class="skill-category">
+                        <h4 class="category-label">Simulation</h4>
+                        <div class="skill-items">
+                            <div class="skill-tag">
+                                <span class="skill-dot"></span>
+                                <span>MATLAB</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Projects -->
+            <div class="subsection">
+                <h3 class="subsection-title">Projects</h3>
+                <div class="projects-placeholder">
+                    <div class="placeholder-icon">🚀</div>
+                    <p>New projects coming soon…</p>
+                </div>
+            </div>
+
+            <!-- Certificates -->
+            <div class="subsection">
+                <h3 class="subsection-title">Certificates</h3>
+                <div class="certificates-grid">
+                    <div class="certificate-card">
+                    <img src="i/m.jpg" alt="Certificate 1">
+                    </div>
+
+                    <div class="certificate-card placeholder">
+                        <div class="certificate-icon">📜</div>
+                        <p>Certificate 2</p>
+                    </div>
+                    <div class="certificate-card placeholder">
+                        <div class="certificate-icon">📜</div>
+                        <p>Certificate 3</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Personal Section -->
+    <section id="personal" class="section personal-section">
+        <div class="container">
+            <h2 class="section-title">Personal</h2>
+            
+            <div class="personal-intro">
+                <p>Here's a glimpse into what I enjoy—some favorite tunes, outdoor adventures, and other passions… see for yourself.</p>
+            </div>
+
+            <!-- Interests -->
+            <div class="subsection">
+                <h3 class="subsection-title">My Interests</h3>
+                <div class="interests-grid">
+                    <div class="interest-card" data-interest="motorcycles">
+                        <div class="interest-icon">🏍️</div>
+                        <h4>Riding Motorcycles</h4>
+                    </div>
+                    <div class="interest-card" data-interest="music">
+                        <div class="interest-icon">🎵</div>
+                        <h4>Listening to Music</h4>
+                    </div>
+                    <div class="interest-card" data-interest="gamedev">
+                        <div class="interest-icon">🎮</div>
+                        <h4>Game Development</h4>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gallery Slider -->
+            <div class="subsection">
+                <h3 class="subsection-title">Gallery</h3>
+                <div class="gallery-slider">
+                    <button class="gallery-arrow gallery-prev">‹</button>
+                    <div class="gallery-slider-container">
+                        <div class="gallery-slider-track">
+                            <div class="gallery-slider-item">
+                                <img src="i/g11.jpg" alt="Gallery 1">
+                            </div>
+                            <div class="gallery-slider-item">
+                                <img src="i/g2.jpg" alt="Gallery 2">
+                            </div>
+                            <div class="gallery-slider-item">
+                                <img src="i/g66.jpg" alt="Gallery 3">
+                            </div>
+                            <div class="gallery-slider-item">
+                                <img src="i/g4.jpg" alt="Gallery 4">
+                            </div>
+                        </div>
+                    </div>
+                    <button class="gallery-arrow gallery-next"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact-section">
+        <div class="container">
+            <h2 class="section-title">Contact Me</h2>
+            <div class="contact-content">
+                <form id="contactForm" class="contact-form">
+                    <!-- Honeypot field for spam bots (leave hidden) -->
+                    <input type="text" name="honeypot" id="honeypot" style="display:none" tabindex="-1" autocomplete="off">
+                    <!-- Optional subject for form -->
+                    <input type="hidden" name="subject" value="New message from portfolio">
+
+                    <div class="form-group">
+                        <label for="name">Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5"></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit">Send Message</button>
+                </form>
+                <div id="successMessage" class="success-message" style="display:none;margin-top:12px;padding:10px;border-radius:6px;background:rgba(0,170,238,0.08);color:#00aeef;">
+                    ✓ Message sent successfully! I'll get back to you soon.
+                </div>
+                <div id="errorMessage" class="error-message" style="display:none;margin-top:12px;padding:10px;border-radius:6px;background:rgba(255,50,50,0.06);color:#c0392b;white-space:pre-wrap;"></div>
+                <div class="contact-info">
+                    <h4>Contact Email</h4>
+                    <p class="email-placeholder">11081@crce.edu.in</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>© 2025 Xavier Fernandes. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Popups -->
+    <div id="popup-motorcycles" class="popup-overlay">
+        <div class="popup-content popup-motorcycles">
+            <button class="popup-close">&times;</button>
+            <h2>Riding Motorcycles</h2>
+            <div class="popup-body">
+                <img src="i/uminglapass.jpg" alt="Motorcycles">
+                <p>Riding Motorcycles gives me inner peace and acts as a stress relief when my life becomes chaotic.
+                     And my dream is to ride a bike i own on Uming La Pass the HIGHEST MOTORABLE PASS in the world. To experience this world in its most raw form </p>
+            </div>
+        </div>
+    </div>
+
+    <div id="popup-music" class="popup-overlay">
+        <div class="popup-content popup-music">
+            <button class="popup-close">&times;</button>
+            <h2>Listening to Music</h2>
+            <div class="popup-body">
+                <div class="music-content">
+                    <div class="music-text">
+                        <p>Music is my nitous fuel for braistorming new ideas and the only lubrictaion my bain needs when i ahve to perform
+                           long heavy tasks be it academic, physical or any other focus demanding task.  </p>
+                        <p>These are the albums i listen to when do coding or while travelling.This First one is AM by Arctic Monkeys and the second on is THE SEARCH by NF.(Click Them 👉)</p>
+                    </div>
+                    <div class="music-images">
+                     <a href="https://open.spotify.com/album/78bpIziExqiI9qztvNFlQu?si=Iww4ZUa2RX-noJR5zXHZPg" target="_blank">
+                     <img src="i/Am.jpg" alt="Music 1">
+                     </a>
+
+                     <a href="https://open.spotify.com/album/07cARcxd2ZMyo5oNgtq758?si=LpcqVuHrT_SRAtPIOzUyyw" target="_blank">
+                     <img src="i/nf.jpg" alt="Music 2">
+                     </a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="popup-gamedev" class="popup-overlay">
+        <div class="popup-content popup-gamedev">
+            <button class="popup-close">&times;</button>
+            <h2>Game Development</h2>
+            <div class="popup-body">
+                <div class="gamedev-layout">
+                    <img src="i/gh1.jpg" alt="Game Dev">
+                    <p>These are the two games that made me think for the first time in my life "How would you have made a game like this?". These games were so interesting 
+                        in their gameplay mechanics and the way they presented the story that it made me want to create games of my own one day that might have mechanics like these games. 
+                    </p>
+                </div>
+                <div class="gamedev-details">
+                    <p>The first game Hollow Knight is an indi game , basically a game made by a small studios that caters to only one niche of audiance. This game was made 
+                        by Team Cherry(3 people)and was released in 2017. The mechanicas of this game is buttery smooth and at the same time challenging to the core. This game rivaled the big AAA titles of its time and won several awards for best indie game of the year. 
+                    </p>
+                    <p>The second game is Helldivers 2 which is a 3rd person shooter, this is the only game in the world where you can accidentally team kill your whole team and still laugh about it. The game is so fun to play with friends and the gunplay mechanics are so satisfying that i could play this game for hours on end.
+                         This game was developed by Arrowhead Game Studios and published by Sony Interactive Entertainment. And the amount of updates and content they provide for free is mind blowing.
+                    </p>   
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <div id="formNotification" role="status" aria-live="polite"></div>
+</body>
+</html>
